@@ -5,81 +5,161 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Política de Privacidad — Pollocrudo Games</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Política de privacidad de Pollocrudo Games.">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #1c2533;
+      --accent-1: #ff6700; /* llamativo naranja */
+      --accent-2: #06b6d4; /* cyan */
+      --muted: #94a3b8;
+      --text: #ffffff;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: "Nunito", sans-serif;
+      background: linear-gradient(180deg, #071022 0%, #071226 40%, #07122a 100%);
+      color: var(--text);
+    }
+    .site-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 18px 28px;
+      background: linear-gradient(90deg, rgba(11, 18, 32, 0.8), rgba(7, 18, 34, 0.15));
+    }
+    .top-nav {
+      display: flex;
+      gap: 12px;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 8px 12px;
+      background: var(--accent-1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(11, 20, 40, 0.6);
+    }
+    .container {
+      max-width: 1080px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+    .card {
+      display: flex;
+      gap: 20px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 8px 30px rgba(8, 12, 20, 0.6);
+    }
+    .banner-square {
+      flex: 0 0 320px;
+      background: #000;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+      border: 2px solid var(--accent-2);
+    }
+    .banner-square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .policy-content {
+      flex: 1;
+      color: var(--text);
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: 20px;
+      color: var(--accent-2);
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .site-footer {
+      text-align: center;
+      margin-top: 32px;
+      padding: 16px;
+      background: var(--card);
+      color: var(--muted);
+      border-radius: var(--radius);
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <nav class="top-nav" aria-label="Navegación principal">
+    <nav class="top-nav">
       <a href="#politica" class="nav-link">Política</a>
       <a href="#contacto" class="nav-link">Contacto</a>
     </nav>
   </header>
 
-  <!-- Contenedor principal: banner cuadrado a la izquierda o derecha + contenido -->
-  <!-- Para poner el banner a la derecha añade la clase "banner-right" al contenedor .policy-container -->
   <main class="container">
-    <section id="politica" class="card policy-container">
-      <!-- Banner cuadrado: cambia el nombre del archivo si no se llama banner.jpg -->
-      <figure class="banner-square cover" aria-hidden="false">
+    <section id="politica" class="card">
+      <figure class="banner-square">
         <img src="banner.jpg" alt="Banner Pollocrudo Games">
       </figure>
-
       <div class="policy-content">
         <h1>Política de Privacidad</h1>
-        <p class="meta">Pollocrudo Games — Fecha de entrada en vigor: 12 de diciembre de 2025</p>
-
-        <article class="policy">
+        <p>Pollocrudo Games — Fecha de entrada en vigor: 12 de diciembre de 2025</p>
+        <article>
           <h2>1. Responsable del tratamiento</h2>
-          <p>El responsable de la presente política es Pollocrudo Games, desarrolladora de videojuegos con sede en España. Contacto: 📧 <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a></p>
-
+          <p>Pollocrudo Games, desarrolladora de videojuegos con sede en España. Contacto: 📧 <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a></p>
           <h2>2. Principios generales</h2>
-          <p>Pollocrudo Games cumple con la normativa aplicable en materia de protección de datos, incluyendo el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). Nuestro compromiso es garantizar la transparencia y la seguridad en el tratamiento de los datos de nuestros usuarios.</p>
-
+          <p>Pollocrudo Games cumple con la normativa aplicable en materia de protección de datos, garantizando transparencia y seguridad.</p>
           <h2>3. Datos recopilados</h2>
-          <p>Podemos recopilar información básica de los usuarios, como:</p>
           <ul>
             <li>País de residencia</li>
             <li>Idioma de preferencia</li>
             <li>Plataforma utilizada (ej. consola, PC)</li>
-            <li>Datos técnicos relacionados con el uso del videojuego (ej. estadísticas de uso, informes de errores)</li>
+            <li>Datos técnicos relacionados con el uso del videojuego</li>
           </ul>
-          <p>No recopilamos información sensible como nombre completo, dirección física, número de teléfono o datos financieros.</p>
-
           <h2>4. Finalidad del tratamiento</h2>
-          <p>Los datos recopilados se utilizan exclusivamente para:</p>
-          <ul>
-            <li>Mejorar la experiencia de juego y optimizar el rendimiento técnico de nuestros títulos.</li>
-            <li>Garantizar el correcto funcionamiento de nuestros servicios.</li>
-            <li>Cumplir con requisitos legales o regulatorios aplicables.</li>
-          </ul>
-
+          <p>Mejorar la experiencia de juego y cumplir requisitos legales.</p>
           <h2>5. Cesión de datos</h2>
-          <p>Los datos recopilados no se ceden a terceros con fines comerciales. Únicamente podrán ser compartidos con proveedores de servicios tecnológicos que nos ayuden a mantener y mejorar nuestros videojuegos, siempre bajo estrictas garantías de seguridad y confidencialidad.</p>
-
-          <h2>6. Seguridad de la información</h2>
-          <p>Implementamos medidas técnicas y organizativas adecuadas para proteger los datos recopilados frente a accesos no autorizados, pérdida o alteración.</p>
-
-          <h2>7. Derechos de los usuarios</h2>
-          <p>Los usuarios tienen derecho a:</p>
+          <p>Los datos no se ceden a terceros con fines comerciales salvo proveedores con garantías adecuadas.</p>
+          <h2>6. Seguridad</h2>
+          <p>Implementamos medidas adecuadas para proteger los datos recopilados.</p>
+          <h2>7. Derechos</h2>
           <ul>
-            <li>Acceder a sus datos personales.</li>
-            <li>Solicitar la rectificación o supresión de los mismos.</li>
-            <li>Oponerse al tratamiento o solicitar su limitación.</li>
-            <li>Ejercer el derecho a la portabilidad de los datos.</li>
+            <li>Acceso, rectificación y supresión de datos</li>
+            <li>Oposición al tratamiento</li>
           </ul>
-          <p>Para ejercer estos derechos, pueden contactar con nosotros en: 📧 <a id="contacto" href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a></p>
-
-          <h2>8. Modificaciones de la política</h2>
-          <p>Pollocrudo Games podrá actualizar esta política de privacidad para reflejar cambios en sus servicios o en la normativa aplicable. La versión vigente estará siempre disponible en nuestros canales oficiales.</p>
+          <p>Contacto: 📧 <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a></p>
+          <h2>8. Modificaciones</h2>
+          <p>Actualizaciones reflejarán cambios en servicios o normativa aplicable.</p>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <p>© Todos los derechos a Pollocrudo Games</p>
-    <p class="small">Diseñado por Pollocrudo Games — Si tienes dudas sobre la política, escribe a <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a></p>
+    <p>Diseñado por Pollocrudo Games — 📧 <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a></p>
   </footer>
 </body>
 </html>
