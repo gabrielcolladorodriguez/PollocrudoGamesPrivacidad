@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Política de Privacidad — Pollocrudo Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Política de privacidad de Pollocrudo Games.">
+  <style>
+    :root{
+      --bg:#071226;
+      --card:#0e1b29;
+      --accent:#06b6d4;      /* cyan */
+      --accent-2:#ff6b2d;    /* naranja para botones */
+      --muted:#9aa8b6;
+      --text:#eaf6ff;
+      --radius:14px;
+      --container-max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#041023 0%, #071226 40%, #071227 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+
+    /* Top header with functional contact button */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+      max-width:var(--container-max);
+      margin:12px auto 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .brand h2{
+      margin:0;
+      font-size:18px;
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:0.02em;
+    }
+    .nav-actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      color: #071227;
+      font-weight:700;
+      background:var(--accent-2);
+      box-shadow: 0 8px 20px rgba(255,107,45,0.12);
+      border: none;
+      cursor:pointer;
+    }
+    .btn.secondary{
+      background: transparent;
+      color:var(--text);
+      border: 1px solid rgba(255,255,255,0.04);
+      font-weight:600;
+      padding:8px 12px;
+    }
+
+    /* Main content container */
+    .container{
+      max-width:var(--container-max);
+      margin:22px auto;
+      padding: 0 20px 40px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border-radius: var(--radius);
+      padding:20px;
+      box-shadow: 0 20px 60px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+      overflow: hidden;
+    }
+
+    /* Flex layout: left banner column + right policy content */
+    .policy-wrapper{
+      display:flex;
+      gap:28px;
+      align-items:stretch; /* ensure banner spans full height of card like in tu captura */
+      align-content:stretch;
+      flex-wrap:wrap;
+    }
+
+    /* Left banner column: uses background-image for best crop control.
+       The image must be present as 'banner.jpg' in the same folder. */
+    .banner-left{
+      flex: 0 0 360px;          /* ancho fijo en desktop */
+      min-width:220px;
+      border-radius:12px;
+      overflow:hidden;
+      border: 3px solid rgba(6,182,212,0.9);
+      box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+      background: #000 center center / cover no-repeat;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      position:relative;
+    }
+    /* If the image file is not found, there will be a subtle gradient fallback */
+    .banner-left::after{
+      content:"Banner Pollocrudo Games";
+      position:absolute;
+      top:12px;
+      left:12px;
+      color: rgba(255,255,255,0.9);
+      font-weight:700;
+      font-size:13px;
+      background: rgba(0,0,0,0.25);
+      padding:6px 8px;
+      border-radius:8px;
+      pointer-events:none;
+    }
+
+    /* Right column with policy */
+    .policy-right{
+      flex:1 1 520px;
+      min-width:260px;
+      padding:12px 6px;
+    }
+
+    .policy-right h1{
+      margin:6px 0 6px;
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-0.01em;
+    }
+    .meta{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    /* Policy styling */
+    .policy h3{
+      color:var(--accent);
+      margin-top:18px;
+      margin-bottom:10px;
+      font-size:18px;
+    }
+    .policy p, .policy li{
+      color:var(--text);
+      font-size:15px;
+      margin:8px 0;
+    }
+    .policy ul{ margin-left:18px; }
+
+    /* Footer */
+    .site-footer{
+      max-width:var(--container-max);
+      margin:28px auto;
+      padding:18px 20px;
+      color:var(--muted);
+      text-align:center;
+      font-size:13px;
+    }
+
+    /* Contact modal (hidden by default) */
+    .modal-backdrop{
+      position:fixed;
+      inset:0;
+      display:none;
+      background: rgba(2,6,23,0.6);
+      align-items:center;
+      justify-content:center;
+      z-index:60;
+      padding:20px;
+    }
+    .modal{
+      width:100%;
+      max-width:720px;
+      background:linear-gradient(180deg,#071227,#061524);
+      border-radius:12px;
+      padding:20px;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow:0 30px 90px rgba(2,6,23,0.8);
+    }
+    .modal h4{ margin:0 0 8px; color:var(--text) }
+    .modal .form-row{ display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap }
+    .modal input, .modal textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.02);
+      color:var(--text);
+      font-size:14px;
+    }
+    .modal .actions{ display:flex; gap:8px; justify-content:flex-end; margin-top:10px }
+    .close-btn{ background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--text); padding:8px 12px; border-radius:8px; cursor:pointer }
+
+    /* Responsive adjustments */
+    @media (max-width:980px){
+      .banner-left{flex:0 0 260px}
+    }
+    @media (max-width:720px){
+      .policy-wrapper{flex-direction:column-reverse; gap:18px}
+      .banner-left{width:100%; flex:0 0 auto; aspect-ratio: 16/6; border-radius:10px}
+      .topbar{padding:10px}
+      .topbar .brand h2{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar" role="banner">
+    <div class="brand">
+      <img src="" alt="" aria-hidden="true" style="width:36px;height:36px;border-radius:8px;display:none">
+      <h2>Pollocrudo Games</h2>
+    </div>
+    <div class="nav-actions">
+      <!-- Botón Contacto funcional: abre modal. También hay un enlace mailto dentro del modal. -->
+      <button class="btn secondary" id="open-contact">Contacto</button>
+      <a class="btn" href="mailto:gabriel@pollocrudogames.es?subject=Contacto%20desde%20privacidad.pollocrudogames.es" id="quick-mail">
+        Escribir
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container" role="main">
+    <section class="card" aria-labelledby="policy-title">
+      <div class="policy-wrapper">
+        <!-- LEFT: BANNER -->
+        <!-- Importante: guarda la imagen que adjuntaste como 'banner.jpg' en el mismo directorio que este HTML.
+             Este div usa background-image para que la imagen siempre se muestre adecuadamente recortada
+             y ocupe toda la altura del bloque, tal y como aparece en tu captura. -->
+        <div class="banner-left" id="banner" role="img" aria-label="Banner Pollocrudo Games"></div>
+
+        <!-- RIGHT: POLÍTICA -->
+        <div class="policy-right">
+          <h1 id="policy-title">Política de Privacidad</h1>
+          <p class="meta">Pollocrudo Games — Fecha de entrada en vigor: 12 de diciembre de 2025</p>
+
+          <article class="policy">
+            <h3>1. Responsable del tratamiento</h3>
+            <p>El responsable del tratamiento de los datos es Pollocrudo Games (en adelante, "la Empresa"), con domicilio en España. Para cualquier consulta relacionada con esta Política de Privacidad puede contactar por correo electrónico a: <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a>.</p>
+
+            <h3>2. Ámbito y finalidad</h3>
+            <p>La presente Política regula la recogida, tratamiento y protección de los datos personales de los usuarios que interactúan con los productos y servicios de la Empresa (por ejemplo, páginas web, demos, servicios online y videojuegos).</p>
+            <p>Las finalidades del tratamiento incluyen, entre otras:</p>
+            <ul>
+              <li>Gestión de la relación con el usuario y atención a consultas o solicitudes.</li>
+              <li>Mejora de la experiencia de juego, análisis de uso y optimización técnica de los títulos.</li>
+              <li>Detección y resolución de incidencias, soporte técnico y mejora de la calidad.</li>
+              <li>Cumplimiento de obligaciones legales y de seguridad.</li>
+            </ul>
+
+            <h3>3. Categorías de datos tratados</h3>
+            <p>Dependiendo del servicio y la interacción, podemos tratar las siguientes categorías de datos:</p>
+            <ul>
+              <li>Datos de identificación pseudónimos (por ejemplo, identificadores del dispositivo o identificadores de jugador).</li>
+              <li>Datos de contacto y comunicación cuando el usuario los facilita voluntariamente (correo electrónico).</li>
+              <li>Información de uso y telemetría (estadísticas de uso, métricas de rendimiento, informes de errores).</li>
+              <li>Datos técnicos relacionados con la plataforma y el hardware (tipo de dispositivo, versión de sistema operativo, dirección IP de forma temporal para seguridad).</li>
+            </ul>
+            <p>No recopilamos datos especialmente protegidos (origen racial, creencias, salud, etc.) ni datos financieros salvo cuando se usen medios de pago en plataformas ajenas donde se aplican sus propias políticas.</p>
+
+            <h3>4. Base jurídica del tratamiento</h3>
+            <p>La base legal para los tratamientos descritos es, según el caso:</p>
+            <ul>
+              <li>El consentimiento del interesado (cuando proceda), por ejemplo para comunicaciones comerciales o análisis específicos.</li>
+              <li>La ejecución de medidas precontractuales o contractuales relacionadas con la prestación de servicios o juegos.</li>
+              <li>El cumplimiento de obligaciones legales aplicables.</li>
+              <li>Los intereses legítimos del responsable para asegurar la seguridad, prevención de fraudes y mejora de servicios, siempre ponderando los derechos del interesado.</li>
+            </ul>
+
+            <h3>5. Conservación de los datos</h3>
+            <p>Los datos se conservarán durante el tiempo necesario para cumplir las finalidades para las que se recabaron y mientras exista una relación o interés legítimo. Una vez finalizado dicho periodo se procederá a su supresión o anonimización, salvo obligación legal de conservación.</p>
+
+            <h3>6. Destinatarios y encargados del tratamiento</h3>
+            <p>No cederemos datos a terceros con fines comerciales. Podremos compartir datos con proveedores y prestadores de servicios (plataformas de hosting, servicios de análisis, pasarelas técnicas) que actúen como encargados del tratamiento y estén sujetos a contractualidad y garantías de seguridad adecuadas.</p>
+
+            <h3>7. Transferencias internacionales</h3>
+            <p>Cuando se realicen transferencias internacionales de datos, se garantizará un nivel de protección equivalente al exigido por la normativa aplicable, mediante cláusulas contractuales estándar u otras garantías válidas.</p>
+
+            <h3>8. Seguridad</h3>
+            <p>Hemos adoptado medidas técnicas y organizativas apropiadas para garantizar la seguridad de los datos y protegerlos contra el acceso no autorizado, pérdida, alteración o divulgación indevida. Estas medidas se revisan y actualizan periódicamente.</p>
+
+            <h3>9. Derechos de los interesados</h3>
+            <p>Los usuarios tienen derecho a:</p>
+            <ul>
+              <li>Acceder a sus datos personales.</li>
+              <li>Solicitar la rectificación de datos inexactos.</li>
+              <li>Solicitar la supresión cuando proceda ("derecho al olvido").</li>
+              <li>Solicitar la limitación del tratamiento.</li>
+              <li>Oponerse al tratamiento por motivos legítimos.</li>
+              <li>Ejercer el derecho de portabilidad de los datos cuando proceda.</li>
+            </ul>
+            <p>Para ejercer sus derechos puede dirigirse mediante correo electrónico a: <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a>. En caso de disconformidad con la respuesta, podrá presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>
+
+            <h3>10. Menores</h3>
+            <p>Nuestros servicios no están dirigidos a menores de edad. Si tenemos constancia de que se han facilitado datos de menores sin el consentimiento necesario, procederemos a su supresión sin dilación.</p>
+
+            <h3>11. Cookies y tecnologías similares</h3>
+            <p>En nuestros sitios web se pueden utilizar cookies necesarias para el funcionamiento y cookies analíticas o de rendimiento. La política de cookies, cuando aplique, describirá su uso y la forma de gestionar las preferencias.</p>
+
+            <h3>12. Cambios en la política</h3>
+            <p>Podremos actualizar esta Política de Privacidad para adaptarla a novedades normativas o cambios en nuestros servicios. La versión vigente y su fecha de entrada en vigor se publicarán en nuestros canales oficiales.</p>
+
+            <h3>13. Información adicional y contacto</h3>
+            <p>Para cualquier consulta sobre protección de datos o para ejercer sus derechos, puede ponerse en contacto con nosotros en: <strong>gabriel@pollocrudogames.es</strong>. También puede escribirnos mediante el formulario de contacto (botón "Contacto").</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© Todos los derechos a Pollocrudo Games</p>
+    <p style="margin-top:8px;color:var(--muted)">Diseñado por Pollocrudo Games — 📧 <a href="mailto:gabriel@pollocrudogames.es">gabriel@pollocrudogames.es</a></p>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+      <h4 id="contact-title">Contacto — Pollocrudo Games</h4>
+      <p style="color:var(--muted);margin-top:6px;margin-bottom:12px">Rellena el formulario y pulsa "Enviar". Se abrirá tu cliente de correo con el mensaje preparado.</p>
+
+      <div class="form-row">
+        <input type="text" id="name" placeholder="Nombre (opcional)">
+      </div>
+      <div class="form-row">
+        <input type="email" id="email" placeholder="Correo electrónico (requerido)">
+      </div>
+      <div class="form-row">
+        <input type="text" id="subject" placeholder="Asunto">
+      </div>
+      <div class="form-row">
+        <textarea id="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      </div>
+
+      <div class="actions" style="display:flex;justify-content:flex-end;gap:8px">
+        <button class="close-btn" id="close-modal">Cancelar</button>
+        <button class="btn" id="send-mail">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      // Cargar la imagen de banner en background del div .banner-left
+      // Cambia el nombre del fichero si lo guardas con otro nombre.
+      const bannerEl = document.getElementById('banner');
+      const bannerFilename = 'banner.jpg'; // guarda la imagen con este nombre junto al HTML
+      // Usar background-image para mejor recorte y que se vea "como en la captura"
+      bannerEl.style.backgroundImage = `url("${bannerFilename}")`;
+
+      // Modal control
+      const openBtn = document.getElementById('open-contact');
+      const backdrop = document.getElementById('modal-backdrop');
+      const closeBtn = document.getElementById('close-modal');
+      const sendBtn = document.getElementById('send-mail');
+
+      function openModal(){
+        backdrop.style.display = 'flex';
+        backdrop.setAttribute('aria-hidden','false');
+      }
+      function closeModal(){
+        backdrop.style.display = 'none';
+        backdrop.setAttribute('aria-hidden','true');
+      }
+
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', function(e){
+        if(e.target === backdrop) closeModal();
+      });
+
+      // Enviar: construye mailto con cuerpo y abre cliente de correo
+      sendBtn.addEventListener('click', function(){
+        const name = encodeURIComponent(document.getElementById('name').value || ' ');
+        const email = document.getElementById('email').value.trim();
+        const subject = encodeURIComponent(document.getElementById('subject').value || 'Contacto desde sitio web');
+        const message = encodeURIComponent(document.getElementById('message').value || '');
+
+        if(!email){
+          alert('Por favor indica tu correo electrónico.');
+          return;
+        }
+
+        const body = encodeURIComponent(
+          'Nombre: ' + (document.getElementById('name').value || '-') + '\\n' +
+          'Correo: ' + email + '\\n\\n' +
+          (document.getElementById('message').value || '')
+        );
+
+        // Abre cliente de correo
+        const mailto = `mailto:gabriel@pollocrudogames.es?subject=${subject}&body=${body}`;
+        window.location.href = mailto;
+        closeModal();
+      });
+
+      // Accessibility: Esc para cerrar modal
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && backdrop.style.display === 'flex'){
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
